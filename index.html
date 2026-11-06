@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pharmacie Mazola – Casablanca</title>
+<meta name="description" content="Pharmacie Mazola, Rue 4, Casablanca 20250. Téléphone : 05 22 93 36 89.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6faf8;--surface:#ffffff;--ink:#0d1b15;--muted:#5d6f66;--line:rgba(13,27,21,.08);
+  --brand:#10b981;--brand-d:#047857;--accent:#a7f3d0;--glow:rgba(16,185,129,.28);
+  --radius:28px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#07110d;--surface:#0f1d17;--ink:#ecf7f1;--muted:#8fa89c;--line:rgba(255,255,255,.08);--brand:#34d399;--brand-d:#10b981;--accent:#064e3b;--glow:rgba(52,211,153,.22)}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* ambient background */
+.blob{position:fixed;border-radius:50%;filter:blur(90px);z-index:-1;pointer-events:none}
+.b1{width:520px;height:520px;background:var(--glow);top:-160px;right:-120px}
+.b2{width:420px;height:420px;background:var(--glow);bottom:-160px;left:-120px;opacity:.7}
+
+/* nav */
+.nav{position:sticky;top:12px;z-index:20;margin:12px auto 0;max-width:1120px;padding:0 20px}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 18px;border-radius:999px;background:color-mix(in srgb,var(--surface) 72%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}
+.mark{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand-d));position:relative;box-shadow:0 6px 16px var(--glow)}
+.mark:before,.mark:after{content:"";position:absolute;background:#fff;border-radius:2px}
+.mark:before{left:12px;top:6px;width:4px;height:16px}
+.mark:after{left:6px;top:12px;width:16px;height:4px}
+.links{display:flex;gap:26px;font-size:.92rem;font-weight:500;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:600;font-size:.92rem;transition:transform .2s,box-shadow .2s}
+.pill.solid{background:var(--ink);color:var(--bg)}
+.pill.solid:hover{transform:translateY(-2px)}
+.pill.brand{background:linear-gradient(135deg,var(--brand),var(--brand-d));color:#fff;box-shadow:0 10px 28px var(--glow)}
+.pill.brand:hover{transform:translateY(-2px);box-shadow:0 14px 34px var(--glow)}
+.pill.line{border:1px solid var(--line);background:var(--surface)}
+.pill.line:hover{transform:translateY(-2px)}
+
+/* hero */
+.hero{padding:96px 0 72px;text-align:center}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:.82rem;font-weight:600;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px var(--glow)}
+h1{font-size:clamp(2.8rem,9vw,6rem);font-weight:800;letter-spacing:-.045em;line-height:1;margin:26px 0 20px}
+h1 span{background:linear-gradient(120deg,var(--brand),var(--brand-d));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:520px;margin:0 auto 34px;color:var(--muted);font-size:1.15rem}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta .pill{padding:15px 26px;font-size:1rem}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;padding-bottom:40px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.tile:hover{transform:translateY(-4px);box-shadow:0 24px 50px -20px var(--glow)}
+.tile .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--accent);margin-bottom:60px;font-size:1.2rem}
+.tile small{display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.tile h3{font-size:1.5rem;letter-spacing:-.02em;line-height:1.25}
+.tile p{color:var(--muted);margin-top:8px;font-size:.95rem}
+.t-addr{grid-column:span 3}
+.t-tel{grid-column:span 3;background:linear-gradient(135deg,var(--brand),var(--brand-d));color:#fff;border:none}
+.t-tel small,.t-tel p{color:rgba(255,255,255,.8)}
+.t-tel .ic{background:rgba(255,255,255,.2)}
+.t-tel h3{font-size:2rem}
+.t-hours{grid-column:span 3}
+.hours{list-style:none;padding:0;margin-top:4px}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;margin:0 -14px;border-radius:14px;font-size:1rem}
+.hours li b{font-weight:700}
+.hours li.today{background:var(--accent);color:var(--ink)}
+.hours li.today span:after{content:" · aujourd’hui";font-size:.8rem;color:var(--muted)}
+.t-rate{grid-column:span 3;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.score{font-size:clamp(4rem,10vw,6.5rem);font-weight:800;letter-spacing:-.06em;line-height:.9}
+.stars{color:#f5b301;font-size:1.5rem;letter-spacing:3px}
+.t-map{grid-column:span 6;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:36px 30px}
+.t-map h3{font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.03em}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}.d5{animation-delay:.45s}
+@keyframes up{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+
+footer{padding:36px 0 48px;text-align:center;color:var(--muted);font-size:.88rem}
+
+@media(max-width:760px){
+  .links{display:none}
+  .hero{padding:64px 0 48px}
+  .bento{grid-template-columns:1fr}
+  .tile,.t-addr,.t-tel,.t-hours,.t-rate,.t-map{grid-column:auto}
+  .tile .ic{margin-bottom:36px}
+}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+
+<div class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#"><span class="mark" aria-hidden="true"></span>Mazola</a>
+    <div class="links">
+      <a href="#infos">Infos</a>
+      <a href="#avis">Avis</a>
+      <a href="#acces">Accès</a>
+    </div>
+    <a class="pill solid" href="tel:+212522933689">Appeler</a>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="tag reveal"><span class="dot"></span><span id="status">Pharmacie · Casablanca</span></span>
+    <h1 class="reveal d1">Pharmacie <span>Mazola</span></h1>
+    <p class="lead reveal d2">Votre pharmacie de quartier, Rue 4 à Casablanca. Un appel, une visite, on s’occupe de vous.</p>
+    <div class="cta reveal d3">
+      <a class="pill brand" href="tel:+212522933689">05 22 93 36 89</a>
+      <a class="pill line" href="https://www.google.com/maps/search/?api=1&query=Pharmacie+Mazola+Rue+4+Casablanca" target="_blank" rel="noopener">Itinéraire ↗</a>
+    </div>
+  </section>
+
+  <section class="bento" id="infos">
+    <article class="tile t-addr reveal d2">
+      <div class="ic">📍</div>
+      <small>Adresse</small>
+      <h3>Rue 4<br>Casablanca 20250</h3>
+      <p>Plus Code : H88H+WJ Casablanca</p>
+    </article>
+
+    <a class="tile t-tel reveal d3" href="tel:+212522933689">
+      <div class="ic">📞</div>
+      <small>Téléphone</small>
+      <h3>05 22 93 36 89</h3>
+      <p>Appuyez pour appeler</p>
+    </a>
+
+    <article class="tile t-hours reveal d3">
+      <div class="ic">🕒</div>
+      <small>Horaires</small>
+      <ul class="hours">
+        <li data-d="1,2,3,4,5"><span>Lundi – Vendredi</span><b>9h00 – 20h00</b></li>
+        <li data-d="6"><span>Samedi</span><b>9h00 – 13h00</b></li>
+        <li data-d="0"><span>Dimanche</span><b>Fermé</b></li>
+      </ul>
+    </article>
+
+    <article class="tile t-rate reveal d4" id="avis">
+      <div>
+        <small>Avis Google</small>
+        <div class="score">4,0</div>
+        <div class="stars" aria-label="4 étoiles sur 5">★★★★☆</div>
+        <p>Note moyenne sur 9 avis</p>
+      </div>
+      <a class="pill line" href="https://www.google.com/maps/search/?api=1&query=Pharmacie+Mazola+Rue+4+Casablanca" target="_blank" rel="noopener">Lire les avis ↗</a>
+    </article>
+
+    <article class="tile t-map reveal d5" id="acces">
+      <div>
+        <small>Nous trouver</small>
+        <h3>Rue 4, Casablanca 20250</h3>
+      </div>
+      <a class="pill brand" href="https://www.google.com/maps/search/?api=1&query=Pharmacie+Mazola+Rue+4+Casablanca" target="_blank" rel="noopener">Ouvrir dans Maps ↗</a>
+    </article>
+  </section>
+</main>
+
+<script>
+(function(){
+  try{
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Casablanca',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var g=function(t){return p.find(function(x){return x.type===t}).value};
+    var day={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[g('weekday')];
+    var m=(+g('hour'))*60+(+g('minute'));
+    var open=(day>=1&&day<=5&&m>=540&&m<1200)||(day===6&&m>=540&&m<780);
+    document.querySelectorAll('.hours li').forEach(function(li){
+      if(li.dataset.d.split(',').indexOf(String(day))>-1)li.classList.add('today');
+    });
+    var s=document.getElementById('status');
+    s.textContent=open?'Ouvert maintenant':'Fermé actuellement';
+  }catch(e){}
+})();
+</script>
+<footer>© Pharmacie Mazola · Rue 4, Casablanca 20250</footer>
+</body>
+</html>
