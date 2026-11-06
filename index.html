@@ -497,6 +497,16 @@ footer{
 }
 .callbar{display:none}
 
+  /* AVAILABILITY NOTICE */
+.avail{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  max-width:620px;margin:70px auto 0;padding:14px 22px;
+  border-radius:999px;border:1px solid rgba(43,216,120,.35);
+  background:rgba(22,132,71,.15);
+  color:var(--ink);font-weight:700;font-size:.92rem;text-align:center;
+}
+.avail .dot{flex:none}
+
 /* ANIMATIONS */
 
 .rv{
@@ -824,6 +834,17 @@ footer{
 </div>
 
 </div>
+    </details>
+</div>
+
+</div>
+
+<div class="avail rv">
+  <span class="dot on"></span>
+  <span data-i="avail">Tous vos médicaments sont disponibles à la pharmacie.</span>
+</div>
+
+</main>
 </main>
 
 <footer data-i="foot">
@@ -894,6 +915,7 @@ dnf:["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"],
 n_before:j=>"Début de la garde dans "+j+" jour(s) · lundi 16 novembre",
 n_in:"Garde en cours · jusqu'à dimanche 22 novembre, minuit",
 n_after:"Semaine de garde terminée · prochaine garde à annoncer"
+avail:"Tous vos médicaments sont disponibles à la pharmacie.",
 },
 ar:{
 logo:"صيدلية مازولا",
@@ -949,6 +971,7 @@ dnf:["الأحد","الاثنين","الثلاثاء","الأربعاء","الخ
 n_before:j=>"تبدأ المداومة بعد "+j+" يوم · الاثنين 16 نونبر",
 n_in:"المداومة جارية · إلى غاية الأحد 22 نونبر",
 n_after:"انتهى أسبوع المداومة · المداومة المقبلة ستعلن لاحقًا"
+avail:"جميع أدويتكم متوفرة بالصيدلية.",
 }
 };
 
