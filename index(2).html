@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#040b08">
+<title>Pharmacie Mazola – Casablanca</title>
+<meta name="description" content="Pharmacie Mazola, Rue 4, Casablanca 20250. Tél. 05 22 93 36 89. Horaires, garde du 16 au 22 novembre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Pharmacy","name":"Pharmacie Mazola","telephone":"+212522933689",
+"address":{"@type":"PostalAddress","streetAddress":"Rue 4","addressLocality":"Casablanca","postalCode":"20250","addressCountry":"MA"},
+"openingHoursSpecification":[
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"12:45"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"20:00"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"13:00"}]}
+</script>
+<style>
+:root{
+  --bg:#040b08;--panel:rgba(255,255,255,.045);--panel2:rgba(255,255,255,.08);--line:rgba(255,255,255,.1);
+  --ink:#eafff5;--muted:#8fb0a2;--mint:#34f5a8;--cyan:#27d3ff;--red:#ff6b6b;
+  --grad:linear-gradient(120deg,var(--mint),var(--cyan));
+  --radius:28px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.disp{font-family:"Space Grotesk","Plus Jakarta Sans",sans-serif}
+em{font-style:normal}
+
+/* scroll progress */
+#sp{position:fixed;top:0;left:0;right:0;height:3px;z-index:100;background:var(--grad);transform-origin:left;transform:scaleX(0);box-shadow:0 0 14px var(--mint)}
+[dir=rtl] #sp{transform-origin:right}
+
+/* background */
+.bg{position:fixed;inset:0;z-index:-2;overflow:hidden;background:var(--bg)}
+.bg i{position:absolute;border-radius:50%;filter:blur(110px);opacity:.55;animation:drift 22s ease-in-out infinite alternate}
+.bg i:nth-child(1){width:620px;height:620px;background:#0b8f62;top:-200px;left:-160px}
+.bg i:nth-child(2){width:560px;height:560px;background:#0b6f99;top:20%;right:-200px;animation-delay:-8s}
+.bg i:nth-child(3){width:520px;height:520px;background:#0a7a55;bottom:-220px;left:20%;animation-delay:-14s}
+@keyframes drift{to{transform:translate(80px,60px) scale(1.15)}}
+.gridbg{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(70% 60% at 50% 25%,#000,transparent);-webkit-mask-image:radial-gradient(70% 60% at 50% 25%,#000,transparent)}
+.cursor{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(52,245,168,.14),transparent 65%);pointer-events:none;transform:translate(-50%,-50%);z-index:-1;left:-999px;top:-999px}
+
+/* nav */
+.nav{position:sticky;top:14px;z-index:50;padding:0 20px;max-width:1160px;margin:14px auto 0}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 18px;border-radius:999px;background:rgba(10,22,17,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--line)}
+[dir=rtl] .nav-in{padding:10px 18px 10px 10px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:1.05rem}
+.mark{width:30px;height:30px;border-radius:10px;background:var(--grad);position:relative;box-shadow:0 0 24px rgba(52,245,168,.5);flex:none}
+.mark:before,.mark:after{content:"";position:absolute;background:#04251a;border-radius:2px}
+.mark:before{left:13px;top:6px;width:4px;height:18px}
+.mark:after{left:6px;top:13px;width:18px;height:4px}
+.links{display:flex;gap:26px;font-size:.92rem;font-weight:500;color:var(--muted)}
+.links a{transition:color .2s}.links a:hover{color:var(--ink)}
+.navr{display:flex;align-items:center;gap:8px}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:.95rem;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-family:inherit;transition:transform .25s,box-shadow .25s,background .25s;will-change:transform}
+.btn:hover{background:var(--panel2)}
+.btn.go{background:var(--grad);color:#03281b;border:none;box-shadow:0 16px 40px -10px rgba(52,245,168,.5)}
+.btn.go:hover{box-shadow:0 0 0 6px rgba(52,245,168,.15),0 20px 50px -8px rgba(52,245,168,.7)}
+.btn.big{padding:18px 32px;font-size:1.05rem}
+.btn.sm{padding:10px 18px;font-size:.88rem}
+
+/* hero */
+.hero{position:relative;padding:92px 0 40px;text-align:center}
+.pillbar{display:inline-flex;align-items:center;gap:12px;padding:8px 18px 8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(10px);font-size:.86rem;font-weight:600}
+.dot{width:10px;height:10px;border-radius:50%;background:#777;flex:none}
+.dot.on{background:var(--mint);animation:ping 2s infinite}
+.dot.off{background:var(--red)}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(52,245,168,.7)}80%,100%{box-shadow:0 0 0 12px rgba(52,245,168,0)}}
+.sep{width:1px;height:14px;background:var(--line)}
+#clock{font-variant-numeric:tabular-nums;color:var(--muted);direction:ltr}
+.nextline{margin-top:14px;color:var(--muted);font-size:.95rem;min-height:1.5em}
+h1{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(3.2rem,12.5vw,9.6rem);letter-spacing:-.06em;line-height:.88;margin:26px 0 0}
+h1 .ln{display:block;overflow:hidden;padding:.04em .02em}
+h1 .ch{display:inline-block;transform:translateY(110%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .g .ch{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes rise{to{transform:none}}
+.lead{max-width:560px;margin:28px auto 36px;color:var(--muted);font-size:1.18rem}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.chip{padding:8px 16px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-size:.85rem;font-weight:600;color:var(--muted)}
+.chip b{color:var(--ink)}
+
+.ecg{position:relative;margin:48px auto 0;max-width:900px;height:90px}
+.ecg svg{width:100%;height:100%;overflow:visible}
+.ecg path{fill:none;stroke:var(--mint);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 8px rgba(52,245,168,.9));stroke-dasharray:1400;stroke-dashoffset:1400;animation:beat 3.6s linear infinite}
+.ecg path.ghost{stroke:rgba(255,255,255,.07);filter:none;animation:none;stroke-dasharray:none}
+@keyframes beat{0%{stroke-dashoffset:1400}60%,100%{stroke-dashoffset:0}}
+
+.caps{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.cap{position:absolute;width:74px;height:28px;border-radius:999px;background:linear-gradient(90deg,var(--mint) 50%,#fff 50%);opacity:.9;box-shadow:0 12px 40px rgba(52,245,168,.35);animation:flt 9s ease-in-out infinite}
+.cap:after{content:"";position:absolute;left:8px;right:8px;top:5px;height:5px;border-radius:99px;background:rgba(255,255,255,.55)}
+.cap.c1{left:6%;top:24%;transform:rotate(-28deg)}
+.cap.c2{right:7%;top:18%;transform:rotate(35deg);width:58px;height:22px;animation-delay:-3s;background:linear-gradient(90deg,var(--cyan) 50%,#fff 50%)}
+.cap.c3{left:12%;bottom:12%;transform:rotate(18deg);width:50px;height:20px;animation-delay:-5s;opacity:.6}
+.cap.c4{right:11%;bottom:20%;transform:rotate(-14deg);animation-delay:-7s;opacity:.7}
+@keyframes flt{50%{translate:0 -22px}}
+
+.marq{margin:48px 0 0;border-block:1px solid var(--line);background:rgba(255,255,255,.02);overflow:hidden;white-space:nowrap;direction:ltr}
+.marq .t{display:inline-flex;gap:44px;padding:16px 0;animation:mq 34s linear infinite;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.marq .t span{display:inline-flex;align-items:center;gap:44px}
+.marq .t span:after{content:"✚";color:var(--mint)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+.shead{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:88px 0 28px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(2rem,5.5vw,3.6rem);letter-spacing:-.04em;line-height:1.02;margin-top:10px}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:30px;overflow:hidden;transform-style:preserve-3d;backdrop-filter:blur(8px)}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(52,245,168,.16),transparent 55%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:rgba(52,245,168,.4)}
+.card:hover:before{opacity:1}
+.k{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h3{font-family:"Space Grotesk",sans-serif;font-size:1.7rem;letter-spacing:-.03em;line-height:1.15}
+.card p{color:var(--muted);margin-top:10px;font-size:.95rem}
+.c-addr{grid-column:span 5}
+.c-tel{grid-column:span 7;background:var(--grad);color:#03281b;border:none;display:flex;flex-direction:column;justify-content:space-between;min-height:230px}
+.c-tel .k,.c-tel p{color:rgba(3,40,27,.7)}
+.c-tel h3{font-size:clamp(2.2rem,6vw,4rem);letter-spacing:-.05em;direction:ltr;unicode-bidi:isolate;text-align:start}
+[dir=rtl] .c-tel h3{text-align:right}
+.c-tel:before{background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.35),transparent 55%)}
+.c-tel .arrow{position:absolute;inset-inline-end:26px;top:26px;width:52px;height:52px;border-radius:50%;background:#03281b;color:var(--mint);display:grid;place-items:center;font-size:1.3rem;transition:transform .3s}
+.c-tel:hover .arrow{transform:rotate(45deg) scale(1.1)}
+.c-hours{grid-column:span 7}
+.c-rate{grid-column:span 5;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.score{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(5rem,13vw,8.5rem);letter-spacing:-.07em;line-height:.85;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stars{position:relative;display:inline-block;font-size:1.6rem;letter-spacing:4px;color:rgba(255,255,255,.15);direction:ltr}
+.stars b{position:absolute;left:0;top:0;width:0;overflow:hidden;color:#ffc53d;white-space:nowrap;font-weight:400;transition:width 1.6s cubic-bezier(.2,.8,.2,1) .3s}
+.stars.go b{width:80%}
+
+.hours{list-style:none;padding:0;margin:8px 0 0}
+.hours li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;margin:0 -16px;border-radius:16px;border:1px solid transparent;transition:background .3s}
+.hours li>span{font-weight:600}
+.hours li b{font-family:"Space Grotesk",sans-serif;font-weight:600;text-align:end;line-height:1.35;font-size:1.05rem}
+.hours li.off b{color:var(--muted)}
+.hours li.today{background:rgba(52,245,168,.1);border-color:rgba(52,245,168,.35)}
+.tb{display:none;margin-inline-start:10px;font-size:.66rem;letter-spacing:.12em;padding:3px 8px;border-radius:99px;background:var(--mint);color:#03281b;font-weight:800;vertical-align:middle}
+.hours li.today .tb{display:inline-block}
+.tl{margin-top:22px}
+.tl .bar{position:relative;height:14px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;direction:ltr}
+.tl .seg{position:absolute;top:0;bottom:0;background:var(--grad);border-radius:99px;opacity:.9}
+.tl .now{position:absolute;top:0;width:3px;height:14px;border-radius:3px;background:#fff;box-shadow:0 0 14px #fff;transform:translateX(-50%)}
+.tl .lab{display:flex;justify-content:space-between;margin-top:8px;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums;direction:ltr}
+.tl .cap2{font-size:.82rem;color:var(--muted);margin-bottom:10px;display:flex;justify-content:space-between}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.member{padding:34px 30px}
+.member h3{font-size:1.35rem}
+.av{position:relative;width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-size:2.4rem;margin-bottom:26px;background:radial-gradient(circle at 30% 25%,rgba(52,245,168,.35),rgba(39,211,255,.12));border:1px solid rgba(52,245,168,.35)}
+.av .ring{position:absolute;inset:-8px;border-radius:50%;border:1px dashed rgba(52,245,168,.4);animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lead-m{background:linear-gradient(160deg,rgba(52,245,168,.14),rgba(39,211,255,.06)),var(--panel);border-color:rgba(52,245,168,.35)}
+.lead-m .k{color:var(--mint)}
+.supply{display:flex;align-items:center;gap:24px;margin-top:16px;padding:28px 30px}
+.supply-ic{flex:none;width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:1.8rem;background:rgba(39,211,255,.12);border:1px solid rgba(39,211,255,.35)}
+.supply h3{font-size:1.4rem}
+.gpm{margin-inline-start:auto;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:.04em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* garde */
+.garde{position:relative;border-radius:40px;padding:clamp(28px,5vw,60px);overflow:hidden;border:1px solid rgba(52,245,168,.3);background:radial-gradient(120% 140% at 100% 0%,rgba(52,245,168,.22),transparent 55%),radial-gradient(100% 120% at 0% 100%,rgba(39,211,255,.18),transparent 55%),rgba(255,255,255,.03)}
+.garde .moon{position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,#bffbe3 40%,transparent 70%);opacity:.12}
+.tagg{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(52,245,168,.14);border:1px solid rgba(52,245,168,.4);color:var(--mint);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.garde h2{font-size:clamp(2.4rem,7vw,5rem);margin-top:18px}
+.garde .sub{color:var(--muted);max-width:420px;margin-top:14px}
+.ghead{position:relative;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.big8{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.04em;text-align:end;line-height:1}
+.big8 small{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+.days{position:relative;display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+.day{border-radius:24px;padding:20px 10px 18px;text-align:center;background:rgba(255,255,255,.05);border:1px solid var(--line);transition:transform .3s,background .3s}
+.day:hover{transform:translateY(-6px);background:rgba(255,255,255,.09)}
+.day .w{font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.day .n{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-.05em;line-height:1;margin:8px 0 10px}
+.day .h{font-size:.8rem;color:var(--muted);line-height:1.3}
+.day.today{background:var(--grad);color:#03281b;border:none;transform:translateY(-10px) scale(1.04);box-shadow:0 24px 60px -12px rgba(52,245,168,.6)}
+.day.today .w,.day.today .h{color:rgba(3,40,27,.75)}
+.day.past{opacity:.4}
+.prog{position:relative;margin-top:34px;height:8px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.prog i{position:absolute;inset-inline-start:0;top:0;bottom:0;width:0;background:var(--grad);border-radius:99px;transition:width 1.6s cubic-bezier(.2,.8,.2,1) .2s;box-shadow:0 0 20px rgba(52,245,168,.8)}
+.gfoot{position:relative;margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+.gfoot strong{color:var(--ink)}
+
+/* map */
+.mapbox{display:grid;grid-template-columns:5fr 7fr;gap:16px}
+.mapcard{display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding:clamp(26px,4vw,40px)}
+.mapcard h3{font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-.04em;line-height:1.02}
+.mapbtns{display:flex;gap:10px;flex-wrap:wrap}
+.frame{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:340px;background:var(--panel)}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:invert(92%) hue-rotate(155deg) saturate(.7) brightness(.95) contrast(.95)}
+
+/* faq */
+.faq{display:grid;gap:12px}
+.faq details{border:1px solid var(--line);background:var(--panel);border-radius:22px;padding:0 26px;transition:border-color .3s,background .3s}
+.faq details[open]{border-color:rgba(52,245,168,.4);background:rgba(52,245,168,.05)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;font-weight:700;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--panel2);color:var(--mint);font-size:1.3rem;transition:transform .3s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq .a{padding:0 0 24px;color:var(--muted);max-width:640px}
+
+footer{padding:64px 0 120px;text-align:center;color:var(--muted);font-size:.88rem}
+.callbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.in.done{transition:transform .25s ease,border-color .3s,background .3s;transition-delay:0s!important}
+
+/* RTL / arabic */
+[dir=rtl] body{font-family:"Cairo","Plus Jakarta Sans",sans-serif}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3,[dir=rtl] .k,[dir=rtl] .eyebrow,[dir=rtl] .tagg,[dir=rtl] .big8,[dir=rtl] .big8 small,[dir=rtl] .marq .t,[dir=rtl] .day .w,[dir=rtl] .hours li b,[dir=rtl] .tb{font-family:"Cairo",sans-serif;letter-spacing:0;text-transform:none}
+[dir=rtl] h1{line-height:1.12}
+[dir=rtl] h1 .ln{padding:.1em .04em}
+[dir=rtl] .card h3,[dir=rtl] h2{line-height:1.3}
+
+@media(max-width:900px){
+  .c-addr,.c-tel,.c-hours,.c-rate{grid-column:span 12}
+  .team{grid-template-columns:1fr}
+  .days{grid-template-columns:repeat(4,1fr)}
+  .day.today{transform:none}
+  .mapbox{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .links{display:none}
+  .hero{padding:60px 0 20px}
+  .cap.c3,.cap.c4{display:none}
+  .days{grid-template-columns:repeat(2,1fr)}
+  .shead{margin-top:64px}
+  .supply{flex-wrap:wrap}
+  .gpm{margin-inline-start:0}
+  .callbar{display:flex;position:fixed;left:14px;right:14px;bottom:14px;z-index:60}
+  .callbar a{flex:1;text-align:center;padding:17px;border-radius:999px;font-weight:800;color:#03281b;background:var(--grad);box-shadow:0 16px 40px -6px rgba(52,245,168,.6)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  h1 .ch{transform:none}.rv{opacity:1;transform:none}.ecg path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<div id="sp"></div>
+<div class="bg"><i></i><i></i><i></i></div>
+<div class="gridbg"></div>
+<div class="cursor" id="cursor"></div>
+
+<div class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#"><span class="mark" aria-hidden="true"></span><span data-i="logo"></span></a>
+    <div class="links">
+      <a href="#infos" data-i="nav_info"></a>
+      <a href="#horaires" data-i="nav_hours"></a>
+      <a href="#equipe" data-i="nav_team"></a>
+      <a href="#garde" data-i="nav_garde"></a>
+      <a href="#acces" data-i="nav_access"></a>
+    </div>
+    <div class="navr">
+      <button class="btn sm" id="langbtn" type="button" data-i="langbtn" aria-label="Langue / اللغة"></button>
+      <a class="btn go sm" href="tel:+212522933689" data-i="call"></a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <header class="hero wrap">
+    <div class="caps" aria-hidden="true"><div class="cap c1"></div><div class="cap c2"></div><div class="cap c3"></div><div class="cap c4"></div></div>
+
+    <span class="pillbar"><span class="dot" id="dot"></span><span id="status"></span><span class="sep"></span><span id="clock">--:--:--</span></span>
+    <div class="nextline" id="nextline"></div>
+
+    <h1 id="title">
+      <span class="ln"></span>
+      <span class="ln g"></span>
+    </h1>
+
+    <p class="lead" data-i="lead"></p>
+
+    <div class="cta">
+      <a class="btn go big mag" href="tel:+212522933689"><span>📞</span><bdi dir="ltr">05 22 93 36 89</bdi></a>
+      <a class="btn big mag" href="https://www.google.com/maps/search/?api=1&query=Pharmacie+Mazola+Rue+4+Casablanca" target="_blank" rel="noopener" data-i="route"></a>
+    </div>
+
+    <div class="chips">
+      <span class="chip" data-i="chip1"></span>
+      <span class="chip" data-i="chip2"></span>
+      <span class="chip" data-i="chip3"></span>
+    </div>
+
+    <div class="ecg" aria-hidden="true">
+      <svg viewBox="0 0 900 90" preserveAspectRatio="none">
+        <path class="ghost" d="M0 45H250l14-4 12 4h30l12-6 10 6h60l10-8 14 6 12-6 14 54 18-92 16 60 10-14h40l16-8 14 8h60l12-4 14 4H900"/>
+        <path d="M0 45H250l14-4 12 4h30l12-6 10 6h60l10-8 14 6 12-6 14 54 18-92 16 60 10-14h40l16-8 14 8h60l12-4 14 4H900"/>
+      </svg>
+    </div>
+  </header>
+
+  <div class="marq" aria-hidden="true"><div class="t" id="marq"></div></div>
+
+  <div class="wrap">
+    <div class="shead rv" id="infos">
+      <div><div class="eyebrow" data-i="info_e"></div><h2 data-i="info_t"></h2></div>
+    </div>
+
+    <div class="bento">
+      <article class="card tilt c-addr rv">
+        <div class="k" data-i="addr_k"></div>
+        <h3 data-i="addr_h"></h3>
+        <p data-i="addr_p"></p>
+      </article>
+
+      <a class="card tilt c-tel rv" href="tel:+212522933689">
+        <div class="arrow">↗</div>
+        <div class="k" data-i="tel_k"></div>
+        <div>
+          <h3>05 22 93 36 89</h3>
+          <p data-i="tel_p"></p>
+        </div>
+      </a>
+
+      <article class="card tilt c-hours rv" id="horaires">
+        <div class="k" data-i="hours_k"></div>
+        <ul class="hours">
+          <li data-d="1,2,3,4,5"><span><i data-i="hrs_wk" style="font-style:normal"></i><em class="tb" data-i="today"></em></span><b data-i="hrs_wk_t"></b></li>
+          <li data-d="6"><span><i data-i="hrs_sat" style="font-style:normal"></i><em class="tb" data-i="today"></em></span><b data-i="hrs_sat_t"></b></li>
+          <li data-d="0" class="off"><span><i data-i="hrs_sun" style="font-style:normal"></i><em class="tb" data-i="today"></em></span><b data-i="closed"></b></li>
+        </ul>
+        <div class="tl">
+          <div class="cap2"><span id="tlcap"></span><span id="tlstate"></span></div>
+          <div class="bar" id="bar"></div>
+          <div class="lab"><span>0h</span><span>6h</span><span>12h</span><span>18h</span><span>24h</span></div>
+        </div>
+        <p data-i="hrs_note"></p>
+      </article>
+
+      <article class="card tilt c-rate rv">
+        <div>
+          <div class="k" data-i="rate_k"></div>
+          <div class="score" id="score">4,0</div>
+          <div class="stars" id="stars">★★★★★<b>★★★★★</b></div>
+          <p data-i="rate_p"></p>
+        </div>
+        <a class="btn sm" href="https://www.google.com/maps/search/?api=1&query=Pharmacie+Mazola+Rue+4+Casablanca" target="_blank" rel="noopener" data-i="rate_btn"></a>
+      </article>
+    </div>
+
+    <div class="shead rv" id="equipe">
+      <div><div class="eyebrow" data-i="team_e"></div><h2 data-i="team_t"></h2></div>
+    </div>
+
+    <div class="team">
+      <article class="card tilt member lead-m rv">
+        <div class="av">👨‍⚕️<span class="ring"></span></div>
+        <div class="k" data-i="mgr_k"></div>
+        <h3 data-i="mgr_h"></h3>
+        <p data-i="mgr_p"></p>
+      </article>
+      <article class="card tilt member rv">
+        <div class="av">🧑‍⚕️<span class="ring"></span></div>
+        <div class="k" data-i="stf_k"></div>
+        <h3 data-i="stf_h"></h3>
+        <p data-i="stf_p"></p>
+      </article>
+      <article class="card tilt member rv">
+        <div class="av">🧑‍⚕️<span class="ring"></span></div>
+        <div class="k" data-i="stf_k"></div>
+        <h3 data-i="stf_h"></h3>
+        <p data-i="stf_p"></p>
+      </article>
+    </div>
+
+    <article class="card tilt supply rv">
+      <div class="supply-ic">📦</div>
+      <div>
+        <div class="k" data-i="sup_k"></div>
+        <h3 data-i="sup_h"></h3>
+        <p data-i="sup_p"></p>
+      </div>
+      <span class="gpm">GPM</span>
+    </article>
+
+    <div class="shead" style="margin:64px 0 0"></div>
+
+    <section class="garde rv" id="garde">
+      <div class="moon"></div>
+      <div class="ghead">
+        <div>
+          <span class="tagg" data-i="g_tag"></span>
+          <h2 data-i="g_h"></h2>
+          <p class="sub" data-i="g_sub"></p>
+        </div>
+        <div class="big8"><small data-i="g_from"></small><span data-i="g_hrs"></span></div>
+      </div>
+
+      <div class="days" id="days"></div>
+      <div class="prog"><i id="prog"></i></div>
+
+      <div class="gfoot">
+        <span id="gardeNote"></span>
+        <a class="btn go sm" href="tel:+212522933689" data-i="g_call"></a>
+      </div>
+    </section>
+
+    <div class="shead rv" id="acces">
+      <div><div class="eyebrow" data-i="map_e"></div><h2 data-i="map_t"></h2></div>
+    </div>
+
+    <div class="mapbox rv">
+      <div class="card mapcard">
+        <div>
+          <div class="k" data-i="addr_k"></div>
+          <h3 data-i="addr_h"></h3>
+          <p data-i="addr_p"></p>
+        </div>
+        <div class="mapbtns">
+          <a class="btn go" href="https://www.google.com/maps/search/?api=1&query=Pharmacie+Mazola+Rue+4+Casablanca" target="_blank" rel="noopener" data-i="map_open"></a>
+          <button class="btn" id="copybtn" type="button" data-i="copy"></button>
+          <button class="btn" id="sharebtn" type="button" data-i="share"></button>
+        </div>
+      </div>
+      <div class="frame">
+        <iframe title="Carte" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Pharmacie+Mazola+Rue+4+Casablanca&output=embed"></iframe>
+      </div>
+    </div>
+
+    <div class="shead rv">
+      <div><div class="eyebrow" data-i="faq_e"></div><h2 data-i="faq_t"></h2></div>
+    </div>
+    <div class="faq rv">
+      <details><summary data-i="q1"></summary><div class="a" data-i="a1"></div></details>
+      <details><summary data-i="q2"></summary><div class="a" data-i="a2"></div></details>
+      <details><summary data-i="q3"></summary><div class="a" data-i="a3"></div></details>
+      <details><summary data-i="q4"></summary><div class="a" data-i="a4"></div></details>
+    </div>
+  </div>
+</main>
+
+<footer data-i="foot"></footer>
+<div class="callbar"><a href="tel:+212522933689"><span data-i="call_bar"></span></a></div>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var fine=window.matchMedia('(hover:hover)').matches;
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  /* ================= Textes ================= */
+  var T={
+    fr:{
+      logo:'Pharmacie Mazola',nav_info:'Infos',nav_hours:'Horaires',nav_team:'Équipe',nav_garde:'Garde',nav_access:'Accès',call:'Appeler',langbtn:'العربية',call_bar:'📞 Appeler 05 22 93 36 89',
+      brand1:'Pharmacie',brand2:'Mazola',
+      lead:'Votre pharmacie de quartier, Rue 4 à Casablanca. Un appel, une visite, on s’occupe de vous.',
+      route:'Itinéraire ↗',
+      chip1:'⭐ <b>4,0</b> · 9 avis Google',chip2:'Lun–Ven <b>9h–12h45 · 15h30–20h</b>',chip3:'Garde du <b>16 au 22 nov.</b>',
+      info_e:'Infos pratiques',info_t:'Tout ce qu’il faut<br>savoir.',
+      addr_k:'📍 Adresse',addr_h:'Rue 4<br>Casablanca 20250',addr_p:'Plus Code : H88H+WJ Casablanca',
+      tel_k:'📞 Téléphone',tel_p:'Appuyez pour appeler maintenant',
+      hours_k:'🕒 Horaires habituels',hrs_wk:'Lundi – Vendredi',hrs_wk_t:'9h00 – 12h45<br>15h30 – 20h00',hrs_sat:'Samedi',hrs_sat_t:'9h00 – 13h00',hrs_sun:'Dimanche',closed:'Fermé',today:'AUJOURD’HUI',
+      hrs_note:'Pendant la semaine de garde : 8h00 – minuit, 7j/7.',
+      rate_k:'⭐ Avis Google',rate_p:'Note moyenne sur 9 avis',rate_btn:'Lire les avis ↗',
+      team_e:'Notre équipe',team_t:'Trois personnes,<br>à votre service.',
+      mgr_k:'Gérant',mgr_h:'Le responsable de la pharmacie',mgr_p:'Il travaille aussi au comptoir avec l’équipe, mais n’est pas présent à tous les horaires d’ouverture.',
+      stf_k:'Équipe',stf_h:'Employé(e) au comptoir',stf_p:'Accueil, conseil et délivrance de vos ordonnances.',
+      sup_k:'Approvisionnement',sup_h:'Nos médicaments sont livrés par GPM',sup_p:'Une réception régulière pour répondre à vos ordonnances.',
+      g_tag:'🌙 Pharmacie de garde',g_h:'De garde du 16<br>au 22 novembre',g_sub:'Toute la semaine, la pharmacie reste ouverte du lundi au dimanche, sans interruption.',g_from:'Ouvert de',g_hrs:'8h00 → minuit',g_call:'Appeler la pharmacie',g_day:'8h00 – minuit',
+      map_e:'Nous trouver',map_t:'Venez nous<br>voir.',map_open:'Ouvrir dans Maps ↗',copy:'Copier l’adresse',copied:'Copié ✓',share:'Partager',
+      faq_e:'Questions fréquentes',faq_t:'En deux mots.',
+      q1:'Quels sont les horaires d’ouverture ?',a1:'Du lundi au vendredi de 9h00 à 12h45 puis de 15h30 à 20h00, et le samedi de 9h00 à 13h00. La pharmacie est fermée le dimanche (hors semaine de garde).',
+      q2:'La pharmacie est-elle de garde ?',a2:'Oui, du lundi 16 au dimanche 22 novembre, de 8h00 à minuit, 7 jours sur 7.',
+      q3:'Où se trouve la pharmacie ?',a3:'Rue 4, Casablanca 20250 (Plus Code : H88H+WJ Casablanca).',
+      q4:'Comment vous joindre ?',a4:'Par téléphone au <bdi dir="ltr">05 22 93 36 89</bdi> pendant les heures d’ouverture.',
+      foot:'© Pharmacie Mazola · Rue 4, Casablanca 20250',
+      open_now:'Ouvert maintenant',closed_now:'Fermé actuellement',guard_s:' · de garde',
+      tl_today:'Aujourd’hui',tl_garde:' · garde',tl_open:'● Ouvert',tl_closed:'● Fermé',tl_closedday:'● Fermé toute la journée',
+      close_at:function(t){return 'Ferme à '+t},
+      open_today:function(t){return 'Ouvre aujourd’hui à '+t},open_tom:function(t){return 'Ouvre demain à '+t},open_day:function(d,t){return 'Ouvre '+d+' à '+t},
+      n_before:function(j){return 'Début de la garde dans <strong>'+j+' jour'+(j>1?'s':'')+'</strong> · lundi 16 novembre'},
+      n_in:'<strong>Garde en cours</strong> · jusqu’à dimanche 22 novembre, minuit',
+      n_after:'Semaine de garde terminée · prochaine garde à annoncer',
+      midnight:'minuit',
+      dn:['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'],
+      dnf:['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'],
+      marq:['Pharmacie Mazola','Casablanca','Lun–Ven 9h–12h45 · 15h30–20h','Samedi 9h–13h','Garde du 16 au 22 nov. · 8h–minuit','Approvisionné par GPM','05 22 93 36 89']
+    },
+    ar:{
+      logo:'صيدلية مازولا',nav_info:'معلومات',nav_hours:'أوقات العمل',nav_team:'الفريق',nav_garde:'المداومة',nav_access:'الموقع',call:'اتصل',langbtn:'Français',call_bar:'📞 اتصل بـ 05 22 93 36 89',
+      brand1:'صيدلية',brand2:'مازولا',
+      lead:'صيدليتكم في الحي، الزنقة 4 بالدار البيضاء. اتصال أو زيارة، ونحن في خدمتكم.',
+      route:'الاتجاهات ↗',
+      chip1:'⭐ <b>4,0</b> · 9 تقييمات على Google',chip2:'الاثنين–الجمعة <b>9:00–12:45 · 15:30–20:00</b>',chip3:'المداومة من <b>16 إلى 22 نونبر</b>',
+      info_e:'معلومات عملية',info_t:'كل ما تحتاج<br>إلى معرفته.',
+      addr_k:'📍 العنوان',addr_h:'الزنقة 4<br>الدار البيضاء 20250',addr_p:'Plus Code : H88H+WJ',
+      tel_k:'📞 الهاتف',tel_p:'اضغط للاتصال الآن',
+      hours_k:'🕒 أوقات العمل المعتادة',hrs_wk:'الاثنين – الجمعة',hrs_wk_t:'9:00 – 12:45<br>15:30 – 20:00',hrs_sat:'السبت',hrs_sat_t:'9:00 – 13:00',hrs_sun:'الأحد',closed:'مغلق',today:'اليوم',
+      hrs_note:'خلال أسبوع المداومة: من 8:00 إلى منتصف الليل، 7 أيام على 7.',
+      rate_k:'⭐ تقييمات Google',rate_p:'المعدل العام على 9 تقييمات',rate_btn:'قراءة التقييمات ↗',
+      team_e:'فريقنا',team_t:'ثلاثة أشخاص<br>في خدمتكم.',
+      mgr_k:'المسؤول',mgr_h:'مسؤول الصيدلية',mgr_p:'يشتغل أيضًا خلف الكونتوار مع الفريق، لكنه لا يكون حاضرًا في جميع أوقات العمل.',
+      stf_k:'الفريق',stf_h:'مستخدم(ة) بالكونتوار',stf_p:'الاستقبال والنصح وتسليم وصفاتكم الطبية.',
+      sup_k:'التزويد',sup_h:'أدويتنا يتم توريدها عبر GPM',sup_p:'توريد منتظم لتلبية وصفاتكم الطبية.',
+      g_tag:'🌙 صيدلية المداومة',g_h:'مداومة من 16<br>إلى 22 نونبر',g_sub:'طوال الأسبوع تظل الصيدلية مفتوحة من الاثنين إلى الأحد دون انقطاع.',g_from:'مفتوحة من',g_hrs:'8:00 ← منتصف الليل',g_call:'اتصل بالصيدلية',g_day:'8:00 – منتصف الليل',
+      map_e:'الموقع',map_t:'مرحبًا بكم<br>عندنا.',map_open:'فتح في Maps ↗',copy:'نسخ العنوان',copied:'تم النسخ ✓',share:'مشاركة',
+      faq_e:'أسئلة شائعة',faq_t:'باختصار.',
+      q1:'ما هي أوقات العمل؟',a1:'من الاثنين إلى الجمعة من 9:00 إلى 12:45 ثم من 15:30 إلى 20:00، والسبت من 9:00 إلى 13:00. الصيدلية مغلقة يوم الأحد (خارج أسبوع المداومة).',
+      q2:'هل الصيدلية في المداومة؟',a2:'نعم، من الاثنين 16 إلى الأحد 22 نونبر، من 8:00 إلى منتصف الليل، 7 أيام على 7.',
+      q3:'أين توجد الصيدلية؟',a3:'الزنقة 4، الدار البيضاء 20250 (Plus Code : H88H+WJ).',
+      q4:'كيف يمكن التواصل معكم؟',a4:'عبر الهاتف على الرقم <bdi dir="ltr">05 22 93 36 89</bdi> خلال أوقات العمل.',
+      foot:'© صيدلية مازولا · الزنقة 4، الدار البيضاء 20250',
+      open_now:'مفتوحة الآن',closed_now:'مغلقة حاليًا',guard_s:' · مداومة',
+      tl_today:'اليوم',tl_garde:' · مداومة',tl_open:'● مفتوحة',tl_closed:'● مغلقة',tl_closedday:'● مغلقة طوال اليوم',
+      close_at:function(t){return 'تغلق على الساعة '+t},
+      open_today:function(t){return 'تفتح اليوم على الساعة '+t},open_tom:function(t){return 'تفتح غدًا على الساعة '+t},open_day:function(d,t){return 'تفتح يوم '+d+' على الساعة '+t},
+      n_before:function(j){return 'تبدأ المداومة بعد <strong>'+j+' '+(j>2&&j<11?'أيام':'يوم')+'</strong> · الاثنين 16 نونبر'},
+      n_in:'<strong>المداومة جارية</strong> · إلى غاية الأحد 22 نونبر، منتصف الليل',
+      n_after:'انتهى أسبوع المداومة · المداومة المقبلة ستُعلن لاحقًا',
+      midnight:'منتصف الليل',
+      dn:['الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت','الأحد'],
+      dnf:['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],
+      marq:['صيدلية مازولا','الدار البيضاء','الاثنين–الجمعة 9:00–12:45 · 15:30–20:00','السبت 9:00–13:00','المداومة من 16 إلى 22 نونبر · 8:00–منتصف الليل','التزويد عبر GPM','05 22 93 36 89']
+    }
+  };
+  var lang='fr';
+  try{var sv=localStorage.getItem('mazola-lang');if(sv==='ar'||sv==='fr')lang=sv}catch(e){}
+  var L=function(){return T[lang]};
+
+  /* ================= Temps ================= */
+  var GARDE_START=Date.UTC(2026,10,16),DAY=86400000;
+  var fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Casablanca',year:'numeric',month:'numeric',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+  var WD={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  function pad(n){return n<10?'0'+n:''+n}
+  function now(){
+    var p=fmt.formatToParts(new Date()),g=function(t){return p.find(function(x){return x.type===t}).value};
+    return{day:WD[g('weekday')],h:+g('hour')%24,mi:+g('minute'),s:+g('second'),utc:Date.UTC(+g('year'),+g('month')-1,+g('day'))};
+  }
+  function gOff(utc){return Math.round((utc-GARDE_START)/DAY)}
+  function slots(dow,g){
+    if(g)return[[480,1440]];
+    if(dow>=1&&dow<=5)return[[540,765],[930,1200]];
+    if(dow===6)return[[540,780]];
+    return[];
+  }
+  function ft(min){
+    if(min>=1440)return L().midnight;
+    var h=Math.floor(min/60),m=min%60;
+    return lang==='ar'?h+':'+pad(m):h+'h'+pad(m);
+  }
+  function nextOpen(tt,mins){
+    for(var d=0;d<8;d++){
+      var u=tt.utc+d*DAY,dow=new Date(u).getUTCDay(),g=gOff(u)>=0&&gOff(u)<=6,sl=slots(dow,g);
+      for(var i=0;i<sl.length;i++){if(d>0||sl[i][0]>mins)return{d:d,dow:dow,start:sl[i][0]}}
+    }
+    return null;
+  }
+
+  /* ================= Rendu ================= */
+  function renderStatic(){
+    var l=L();
+    document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+    document.title=lang==='ar'?'صيدلية مازولا – الدار البيضاء':'Pharmacie Mazola – Casablanca';
+    document.querySelectorAll('[data-i]').forEach(function(el){var v=l[el.getAttribute('data-i')];if(typeof v==='string')el.innerHTML=v});
+    var cb=$('#copybtn');if(cb)cb.dataset.state='';
+    $('#sharebtn').style.display=(navigator.share||navigator.clipboard)?'':'none';
+  }
+  function renderTitle(){
+    var words=[L().brand1,L().brand2],d0=0;
+    document.querySelectorAll('#title .ln').forEach(function(ln,idx){
+      ln.innerHTML='';
+      if(lang==='ar'){
+        var s=document.createElement('span');s.className='ch';s.textContent=words[idx];s.style.animationDelay=(0.15+idx*0.2)+'s';ln.appendChild(s);
+      }else{
+        for(var i=0;i<words[idx].length;i++){
+          var c=document.createElement('span');c.className='ch';c.textContent=words[idx][i];c.style.animationDelay=(0.15+d0*0.05)+'s';d0++;ln.appendChild(c);
+        }
+      }
+    });
+  }
+  function renderMarq(){
+    var one='';L().marq.forEach(function(x){one+='<span>'+x+'</span>'});
+    $('#marq').innerHTML=one+one+one+one;
+  }
+  var pct=0;
+  function renderDays(){
+    var off=gOff(now().utc),box=$('#days');box.innerHTML='';
+    for(var i=0;i<7;i++){
+      var el=document.createElement('div');
+      el.className='day'+(off===i?' today':'')+(off>i?' past':'');
+      el.innerHTML='<div class="w">'+L().dn[i]+'</div><div class="n">'+(16+i)+'</div><div class="h">'+L().g_day+'</div>';
+      box.appendChild(el);
+    }
+  }
+  function renderNote(){
+    var tt=now(),off=gOff(tt.utc),n=$('#gardeNote'),l=L();
+    if(off<0){n.innerHTML=l.n_before(-off);pct=0}
+    else if(off<=6){n.innerHTML=l.n_in;pct=((off+(tt.h*60+tt.mi)/1440)/7)*100}
+    else{n.textContent=l.n_after;pct=100}
+    if($('#garde').classList.contains('in'))$('#prog').style.width=pct+'%';
+  }
+  function drawBar(tt,sl,mins,inG){
+    var bar=$('#bar');bar.innerHTML='';
+    sl.forEach(function(r){var s=document.createElement('div');s.className='seg';s.style.left=(r[0]/14.4)+'%';s.style.width=((r[1]-r[0])/14.4)+'%';bar.appendChild(s)});
+    var n=document.createElement('div');n.className='now';n.style.left=(mins/14.4)+'%';bar.appendChild(n);
+    var open=sl.some(function(r){return mins>=r[0]&&mins<r[1]}),l=L();
+    $('#tlcap').textContent=l.tl_today+(inG?l.tl_garde:'');
+    var st=$('#tlstate');st.textContent=sl.length?(open?l.tl_open:l.tl_closed):l.tl_closedday;st.style.color=open?'var(--mint)':'var(--red)';
+  }
+  var lastKey='';
+  function tick(){
+    var tt=now(),l=L(),mins=tt.h*60+tt.mi,off=gOff(tt.utc),inG=off>=0&&off<=6,sl=slots(tt.day,inG);
+    $('#clock').textContent=pad(tt.h)+':'+pad(tt.mi)+':'+pad(tt.s);
+    var cur=null;sl.forEach(function(r){if(mins>=r[0]&&mins<r[1])cur=r});
+    var open=!!cur;
+    $('#status').textContent=(open?l.open_now:l.closed_now)+(inG?l.guard_s:'');
+    $('#dot').className='dot '+(open?'on':'off');
+    var nl='';
+    if(open){nl=l.close_at(ft(cur[1]))}
+    else{var no=nextOpen(tt,mins);if(no){nl=no.d===0?l.open_today(ft(no.start)):no.d===1?l.open_tom(ft(no.start)):l.open_day(l.dnf[no.dow],ft(no.start))}}
+    $('#nextline').textContent=nl;
+    var key=lang+'|'+mins+'|'+inG;
+    if(key!==lastKey){
+      lastKey=key;drawBar(tt,sl,mins,inG);
+      document.querySelectorAll('.hours li').forEach(function(li){
+        li.classList.toggle('today',!inG&&li.dataset.d.split(',').indexOf(String(tt.day))>-1);
+      });
+    }
+  }
+  function renderAll(){renderStatic();renderTitle();renderMarq();renderDays();renderNote();lastKey='';tick()}
+  renderAll();setInterval(tick,1000);
+  setInterval(function(){renderNote()},60000);
+
+  /* ================= Interactions ================= */
+  $('#langbtn').addEventListener('click',function(){
+    lang=lang==='fr'?'ar':'fr';try{localStorage.setItem('mazola-lang',lang)}catch(e){}
+    renderAll();
+  });
+  var addr='Pharmacie Mazola, Rue 4, Casablanca 20250';
+  $('#copybtn').addEventListener('click',function(){
+    var b=this;
+    function ok(){b.innerHTML=L().copied;setTimeout(function(){b.innerHTML=L().copy},1800)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr).then(ok,function(){})}
+  });
+  $('#sharebtn').addEventListener('click',function(){
+    var b=this;
+    if(navigator.share){navigator.share({title:'Pharmacie Mazola',text:addr+' · 05 22 93 36 89',url:location.href.split('#')[0]}).catch(function(){})}
+    else if(navigator.clipboard){navigator.clipboard.writeText(addr).then(function(){b.innerHTML=L().copied;setTimeout(function(){b.innerHTML=L().share},1800)},function(){})}
+  });
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement,r=h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+    $('#sp').style.transform='scaleX('+Math.min(1,Math.max(0,r))+')';
+  },{passive:true});
+
+  /* apparition au scroll */
+  var counted=false;
+  function countUp(){
+    if(counted)return;counted=true;
+    var el=$('#score'),t0=performance.now();
+    (function f(n){var p=Math.min(1,(n-t0)/1400),e=1-Math.pow(1-p,3);el.textContent=(4*e).toFixed(1).replace('.',',');if(p<1)requestAnimationFrame(f)})(t0);
+  }
+  function onIn(e){
+    e.classList.add('in');
+    setTimeout(function(){e.classList.add('done')},1300);
+    if(e.id==='garde')setTimeout(function(){$('#prog').style.width=pct+'%'},200);
+    if(e.querySelector&&e.querySelector('#stars'))setTimeout(function(){$('#stars').classList.add('go')},200);
+    if(e.querySelector&&e.querySelector('#score'))countUp();
+  }
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){onIn(x.target);io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(el,i){el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+  }else{els.forEach(onIn)}
+
+  if(!fine||reduce)return;
+
+  var cur=$('#cursor');
+  window.addEventListener('pointermove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+
+  document.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('pointermove',function(e){
+      var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+      c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+      if(c.classList.contains('tilt')&&c.classList.contains('done')){
+        var rx=((y/r.height)-.5)*-5,ry=((x/r.width)-.5)*5;
+        c.style.transform='perspective(900px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-3px)';
+      }
+    });
+    c.addEventListener('pointerleave',function(){c.style.transform=''});
+  });
+  document.querySelectorAll('.mag').forEach(function(b){
+    b.addEventListener('pointermove',function(e){
+      var r=b.getBoundingClientRect();
+      b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.2)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)';
+    });
+    b.addEventListener('pointerleave',function(){b.style.transform=''});
+  });
+})();
+</script>
+</body>
+</html>
